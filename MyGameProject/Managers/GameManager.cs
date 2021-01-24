@@ -28,6 +28,7 @@ namespace MyGameProject
             //{
             // burada yapmam gereken işlemi bilmiyorum. Amacım 15 günü geçtiyse iade edemesin!!
             player.PlayerWallet = game.GamePrice + player.PlayerWallet;
+            gamesOfUser.Remove(game);
             //}
             Console.WriteLine($"you returned the game that {game}!");
         }
@@ -35,7 +36,8 @@ namespace MyGameProject
         public void Sell(Game game, Player player)
         {
             // %30 koydum abi düşünmeden satmayıver :)
-            player.PlayerWallet = game.GamePrice * 0.30;
+            player.PlayerWallet = player.PlayerWallet- (game.GamePrice * 0.30);
+            gamesOfUser.Remove(game);
             Console.WriteLine($"you selled the game that {game}!");
         }
 
