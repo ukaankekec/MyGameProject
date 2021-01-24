@@ -30,15 +30,15 @@ namespace MyGameProject
             player.PlayerWallet = game.GamePrice + player.PlayerWallet;
             gamesOfUser.Remove(game);
             //}
-            Console.WriteLine($"you returned the game that {game}!");
+            Console.WriteLine($"you returned the game that {game.GameName}!");
         }
 
         public void Sell(Game game, Player player)
         {
             // %30 koydum abi düşünmeden satmayıver :)
-            player.PlayerWallet = player.PlayerWallet- (game.GamePrice * 0.30);
+            player.PlayerWallet = player.PlayerWallet+ (game.GamePrice * 0.30);
             gamesOfUser.Remove(game);
-            Console.WriteLine($"you selled the game that {game}!");
+            Console.WriteLine($"you selled the game that {game.GameName}!");
         }
 
         public void Add(Game game)
